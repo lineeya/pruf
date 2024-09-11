@@ -1,10 +1,15 @@
 
 
 body {
-    background-color: #548b84;
+    background-color: #7d6c86;
     /* rgb(255,255,255)
     rgba(255,255,255,0,5) */
 }
 ul li {
     display: inline;
+}
+#title2{
+    border: 2px solid rgb(64, 172, 136);
+    width: 500px;
+    height: 100vh;
 }
