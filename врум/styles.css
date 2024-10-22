@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: rgb(37, 52, 66); 
+}
+
+.car {
+    width: 200px;
+    height: 40px;
+    background-color: rgb(185, 174, 174); /* Цвет машины */
+    position: absolute;
+    bottom: 50px; /* Размещаем машину на "дороге" */
+    left: 50px; /* Позиция машины */
+    border-radius: 10px; /* Основные закругленные углы кузова */
+   
+}
+
+.roof {
+    width: 140px;
+    height: 36px;
+    background-color: rgb(185, 174, 174);
+    position: absolute;
+    top: -30px; /* Расположение крыши над кузовом */
+    right: 40px; /* Центр крыши */
+    clip-path: polygon(0 100%, 110% 100%, 70% 0%, 20% 0%); /* Трапециевидная форма */
+    
+}
+
+.windows {
+    width: 70px;
+    height: 20px;
+    background-color: rgba(89, 114, 146, 0.5); /* Затемненные окна */
+    position: absolute;
+    top: -20px; /* Расположение окон */
+    left: 50px; /* Центр окон */
+    border-radius: 10px; /* Основные закругленные углы */
+    clip-path: polygon(0 100%, 100% 100%, 70% 0%, 20% 0%); /* Трапециевидная форма */
+} 
+
+.car::before, .car::after {
+    content: '';
+    position: absolute;
+    background-color: rgb(38, 32, 32); /* Цвет колес */
+    border-radius: 50%; /* Круглые колеса */
+}
+
+.car::before {
+    width: 40px;
+    height: 40px;
+    bottom: -20px; /* Позиция первого колеса */
+    left: 20px; 
+}
+
+.car::after {
+    width: 40px;
+    height: 40px;
+    bottom: -20px; /* Позиция второго колеса */
+    right: 20px; 
+}
