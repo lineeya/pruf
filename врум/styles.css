@@ -7,17 +7,17 @@ body {
 .car { 
     width: 200px; 
     height: 40px; 
-    background-color: rgb(185, 174, 174); /* Цвет машины */ 
+    background-color: rgb(185, 174, 174); 
     position: absolute; 
-    bottom: 50px; /* Размещаем машину на "дороге" */ 
-    left: -220px; /* Начальная позиция машины за пределами экрана */ 
-    border-radius: 10px; /* Основные закругленные углы кузова */ 
-    animation: drive 5s linear infinite; /* Анимация движения */ 
+    bottom: 50px; 
+    left: -220px; 
+    border-radius: 10px; 
+    animation: drive 5s linear infinite; 
 } 
 
 @keyframes drive {
-    0% { left: -220px; } /* Начальная позиция */
-    100% { left: 100vw; } /* Конечная позиция */
+    0% { left: -220px; } 
+    100% { left: 100vw; } 
 }
 
 .roof { 
@@ -25,39 +25,49 @@ body {
     height: 36px; 
     background-color: rgb(185, 174, 174); 
     position: absolute; 
-    top: -30px; /* Расположение крыши над кузовом */ 
-    right: 40px; /* Центр крыши */ 
-    clip-path: polygon(0 100%, 110% 100%, 70% 0%, 20% 0%); /* Трапециевидная форма */ 
+    top: -30px; 
+    right: 40px; 
+    clip-path: polygon(0 100%, 110% 100%, 70% 0%, 20% 0%); 
 } 
 
 .windows { 
     width: 70px; 
     height: 20px; 
-    background-color: rgba(89, 114, 146, 0.5); /* Затемненные окна */ 
+    background-color: rgba(89, 114, 146, 0.5); 
     position: absolute; 
-    top: -20px; /* Расположение окон */ 
-    left: 50px; /* Центр окон */ 
-    border-radius: 10px; /* Основные закругленные углы */ 
-    clip-path: polygon(0 100%, 100% 100%, 70% 0%, 20% 0%); /* Трапециевидная форма */ 
+    top: -20px; 
+    left: 50px; 
+    border-radius: 10px; 
+    clip-path: polygon(0 100%, 100% 100%, 70% 0%, 20% 0%); 
 }  
 
 .car::before, .car::after { 
     content: ''; 
     position: absolute; 
-    background-color: rgb(38, 32, 32); /* Цвет колес */ 
-    border-radius: 50%; /* Круглые колеса */ 
+    background: linear-gradient(135deg, rgb(38, 32, 32), rgb(78, 74, 74)); 
+    border-radius: 50%; 
+    animation: rotate 1s linear infinite; 
 } 
 
 .car::before { 
     width: 40px; 
     height: 40px; 
-    bottom: -20px; /* Позиция первого колеса */ 
+    bottom: -20px; 
     left: 20px;  
 } 
 
 .car::after { 
     width: 40px; 
     height: 40px; 
-    bottom: -20px; /* Позиция второго колеса */ 
+    bottom: -20px; 
     right: 20px;  
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
